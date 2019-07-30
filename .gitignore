@@ -16,6 +16,8 @@ target/
 lib_managed/
 src_managed/
 project/boot/
+project/target
+project/project
 project/plugins/project/
 sbt/*.jar
 mini-complete-example/sbt/*.jar

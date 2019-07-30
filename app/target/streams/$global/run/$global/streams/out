@@ -1,3 +1,8 @@
-[0m[[0minfo[0m] [0mRunning ConnexionLocal [0m
-[0m[[31merror[0m] [0m19/07/30 17:09:30 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable[0m
+[0m[[0minfo[0m] [0mRunning fr.stephanewalter.hello.ConnexionLocal [0m
 [0m[[0minfo[0m] [0m[Hello Spark][0m
+[0m[[0minfo[0m] [0m+-----------+[0m
+[0m[[0minfo[0m] [0m|        _c0|[0m
+[0m[[0minfo[0m] [0m+-----------+[0m
+[0m[[0minfo[0m] [0m|Hello Spark|[0m
+[0m[[0minfo[0m] [0m+-----------+[0m
+[0m[[0minfo[0m] [0m[0m

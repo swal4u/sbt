@@ -4,7 +4,7 @@
 		module="hello-spark_2.11"
 		revision="0.0.1"
 		status="integration"
-		publication="20190730170153"
+		publication="20190730181012"
 	>
 		<description>
 		hello-spark

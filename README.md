@@ -7,11 +7,11 @@ If you want to start another command, you can override the default command.
 ## Start the container with the default command
 
 ```bash
-docker run --rm -v $PWD/app:/app --name sbt swal4u/sbt:1.2.8
+docker run --rm -v $PWD/app:/app -v ivy2:/root/.ivy2 -v sbt:/root/.sbt --name sbt swal4u/sbt:0.13.17
 ```
 
 ## Start the container with another command
 
 ```bash
-docker run --rm -v $PWD/app:/app --name sbt swal4u/sbt:1.2.8 sbt compile
+docker run --rm -v $PWD/app:/app -v ivy2:/root/.ivy2 -v sbt:/root/.sbt --name sbt swal4u/sbt:0.13.17 sbt compile
 ```

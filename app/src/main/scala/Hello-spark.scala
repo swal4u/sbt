@@ -24,9 +24,7 @@ object Runner {
       .option("header", "false")
       .option("delimiter","\\t")
       .option("charset","UTF-8")
-      .load("data/test.csv")
-
+      .load("/app/src/main/resources/test.csv")
     myfile.take(1).foreach(println)
   }
 }
-

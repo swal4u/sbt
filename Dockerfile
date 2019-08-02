@@ -8,7 +8,7 @@ ENV SBT_VERSION=0.13.17
 ENV SBT_HOME=/usr/local/sbt
 ENV PATH=${SBT_HOME}/bin:${PATH}
 
-RUN apk add --update --no-cache curl ca-certificates bash && mkdir /app
+RUN apk add --update --no-cache curl ca-certificates bash && apk add gcompat libc6-compat && mkdir /app
 RUN curl -sL /tmp/sbt-${SBT_VERSION}.tgz "https://github.com/sbt/sbt/releases/download/v${SBT_VERSION}/sbt-${SBT_VERSION}.tgz" | \
     gunzip | tar -x -C /usr/local && \
     sbt sbtVersion

@@ -1,3 +1,0 @@
-[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(/app/src/main/resources/test.csv,/app/target/scala-2.11/classes/test.csv)[0m
-[0m[[0mdebug[0m] [0m	(/app/src/main/resources/log4j.properties,/app/target/scala-2.11/classes/log4j.properties)[0m

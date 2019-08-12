@@ -13,9 +13,5 @@ RUN curl -sL /tmp/sbt-${SBT_VERSION}.tgz "https://github.com/sbt/sbt/releases/do
     gunzip | tar -x -C /usr/local && \
     sbt sbtVersion
 
-# Declare volumes
-#VOLUME [ "/root/.sbt" ]
-#VOLUME [ "/root/.ivy2" ]
-
 WORKDIR /root/
 CMD [ "sbt","package" ]

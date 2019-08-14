@@ -14,7 +14,11 @@ RUN curl -sL /tmp/sbt-${SBT_VERSION}.tgz "https://github.com/sbt/sbt/releases/do
     sbt sbtVersion
 
 # Declare volume to expose for caching
-VOLUME ["/root/.sbt","/root/.ivy2","/app"]
+# sbt:"/root/.sbt"
+# ivy2:"/root/.ivy2"
+
+# Declare volume of your application
+# $PWD/app:/app
 
 WORKDIR /app
 CMD [ "sbt","package" ]

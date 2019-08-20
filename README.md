@@ -19,6 +19,6 @@ docker run --rm -v $PWD:/app -v ivy2:/root/.ivy2 -v sbt:/root/.sbt --name sbt sw
 ## Start the container with another command
 
 ```bash
-docker run --rm -v $PWD:/app -v ivy2:/root/.ivy2 -v sbt:/root/.sbt --name sbt swal4u/sbt:version-0.13.17.7 sbt compile
+docker run --rm -v $PWD:/app -v ivy2:/root/.ivy2 -v sbt:/root/.sbt --name sbt swal4u/sbt:v0.13.17.7 sbt compile
 ```
 

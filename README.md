@@ -21,3 +21,7 @@ docker run --rm -v $PWD:/app -v ivy2:/root/.ivy2 -v sbt:/root/.sbt --name sbt sw
 ```bash
 docker run --rm -v $PWD:/app -v ivy2:/root/.ivy2 -v sbt:/root/.sbt --name sbt swal4u/sbt:v0.13.17.1 sbt compile
 ```
+
+### Alias
+
+Des alias ont été mis en place pour en simplifier l'usage.

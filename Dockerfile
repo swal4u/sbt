@@ -13,12 +13,6 @@ RUN curl -sL /tmp/sbt-${SBT_VERSION}.tgz "https://github.com/sbt/sbt/releases/do
     gunzip | tar -x -C /usr/local && \
     sbt sbtVersion
 
-# Declare volume to expose for caching
-# sbt:"/root/.sbt"
-# ivy2:"/root/.ivy2"
+# WORKDIR /app
 
-# Declare volume of your application
-# $PWD/app:/app
-
-WORKDIR /app
 CMD [ "sbt","package" ]

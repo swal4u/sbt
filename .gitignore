@@ -9,6 +9,7 @@ spark-warehouse
 .viminfo
 .scala_history
 metastore_db
+.metals
 
 # sbt specific
 dist/*

@@ -25,3 +25,7 @@ docker run --rm -v $PWD:/root -v ivy2:/root/.ivy2 -v sbt:/root/.sbt --name sbt s
 ### Alias
 
 Des alias ont été mis en place pour en simplifier l'usage.
+
+### Publication du container
+
+git tag -a vX.Y.Z.T

@@ -28,3 +28,4 @@ Des alias ont été mis en place pour en simplifier l'usage.
 ### Publication du container
 
 git tag -a -m "message" vX.Y.Z.T
+git push --tags

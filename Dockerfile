@@ -12,5 +12,5 @@ RUN curl -sL /tmp/sbt-${SBT_VERSION}.tgz "https://github.com/sbt/sbt/releases/do
     gunzip | tar -x -C /usr/local && \
     sbt sbtVersion
 
-CMD [ "sbt","package" ]
 WORKDIR /root
+CMD [ "sbt","package" ]

@@ -13,3 +13,4 @@ RUN curl -sL /tmp/sbt-${SBT_VERSION}.tgz "https://github.com/sbt/sbt/releases/do
     sbt sbtVersion
 
 CMD [ "sbt","package" ]
+WORKDIR /root

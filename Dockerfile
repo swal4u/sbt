@@ -11,5 +11,6 @@ RUN apk add --update --no-cache curl ca-certificates bash && apk add gcompat lib
 RUN curl -sL /tmp/sbt-${SBT_VERSION}.tgz "https://github.com/sbt/sbt/releases/download/v${SBT_VERSION}/sbt-${SBT_VERSION}.tgz" | \
     gunzip | tar -x -C /usr/local && \
     sbt sbtVersion
-
+RUN adduser -D -u 1000 appuser
+USER appuser
 CMD [ "sbt","package" ]

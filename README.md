@@ -5,20 +5,22 @@ If you want to start another command, you can override the default command.
 
 ## Build the container
 
+### Default build (as root)
+
 ```bash
-docker build -t swal4u/sbt:v1.3.7.2 .
+docker build -t swal4u/sbt:v1.3.7.5 --build-arg USER_ID=0 --build-arg GROUP_ID=0 .
+```
+
+### Specific build (if you use vagrant)
+
+```bash
+docker build -t swal4u/sbt --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) .
 ```
 
 ## Start the container with the default command
 
 ```bash
-docker run --rm -v $PWD:/app -v ivy2:/app/.ivy2 -v sbt:/app/.sbt --name sbt swal4u/sbt:v1.3.7.2
-```
-
-## Start the container with another command
-
-```bash
-docker run --rm -v $PWD:/app -v ivy2:/app/.ivy2 -v sbt:/app/.sbt --name sbt swal4u/sbt:v1.3.7.2 sbt compile
+docker run --rm -it -p 9000:9000 -v $PWD:/app -v ivy2:/var/.ivy2 -v sbt:/var/.sbt --name sbt swal4u/sbt
 ```
 
 ### Alias

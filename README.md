@@ -13,7 +13,7 @@ docker run --rm -v $PWD:/app -v ivy2:/app/.ivy2 -v sbt:/app/.sbt --name sbt swal
 
 ## Advanced users
 
-If you want to work with a more secure container or if you want to use docker in vagrant in windows, you have to to build the container before running.
+If you want to work with a more secure container or if you want to use docker in vagrant in windows, you have to build the container before running.
 This version create an user (name: docker) inside the container with the uid as your host user. So it will possible to share folder in vagrant for example.
 
 First, you have to download or clone this repo.

@@ -3,31 +3,42 @@
 When you start your container, it automatically starts the sbt package command.
 If you want to start another command, you can override the default command.
 
-## Build the container
+## Get started (Simple version - run container as root)
 
-### Default build (as root)
+You have just to launch this command.
 
 ```bash
-docker build -t swal4u/sbt:v1.3.7.5 --build-arg USER_ID=0 --build-arg GROUP_ID=0 .
+docker run --rm -v $PWD:/app -v ivy2:/app/.ivy2 -v sbt:/app/.sbt --name sbt swal4u/sbt:v1.3.7.3
 ```
 
-### Specific build (if you use vagrant)
+## Advanced users
+
+If you want to work with a more secure container or if you want to use docker in vagrant in windows, you have to to build the container before running.
+This version create an user (name: docker) inside the container with the uid as your host user. So it will possible to share folder in vagrant for example.
+
+First, you have to download or clone this repo.
 
 ```bash
-docker build -t swal4u/sbt --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) .
+git clone git@github.com:swal4u/sbt.git
 ```
 
-## Start the container with the default command
+Second, you have to build the container.
 
 ```bash
-docker run --rm -it -p 9000:9000 -v $PWD:/app -v ivy2:/var/.ivy2 -v sbt:/var/.sbt --name sbt swal4u/sbt
+docker build -t swal4u/sbt --build-arg USER_ID=$(id -u) .
+```
+
+Third, you can run the container. I change also the system for cache folders to avoid the download of dependencies on each project.
+
+```bash
+docker run --rm -it -p 9000:9000 -v $PWD:/app -v ivy2:/home/docker/.ivy2 -v sbt:/home/docker/.sbt -v cache:/home/docker/.cache --name sbt swal4u/sbt sbt
 ```
 
 ### Alias
 
-Des alias ont été mis en place pour en simplifier l'usage.
+Don't forget to create alias on your machine to simplify the usage of this container.
 
-### Publication du container
+### Publish (tip for me)
 
 git tag -a -m "message" vX.Y.Z.T
 git push --tags

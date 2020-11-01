@@ -3,7 +3,7 @@
 When you start your container, it automatically starts the sbt package command.
 If you want to start another command, you can override the default command.
 
-## Get started (Simple version - run container as root)
+## Get started
 
 You have just to launch this command.
 

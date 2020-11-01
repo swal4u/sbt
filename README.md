@@ -1,14 +1,13 @@
 # How to work with the container SBT
 
 When you start your container, it automatically starts the sbt package command.
-If you want to start another command, you can override the default command.
 
 ## Get started
 
 You have just to launch this command.
 
 ```bash
-docker run -it --rm -v $PWD:/app --name sbt -e TZ=Europe/Paris swal4u/sbt:v1.4.1.0
+docker run -it --rm -v $PWD:/app -w /app -v ivy2:/home/sbt/.cache --name sbt -e TZ=Europe/Paris swal4u/sbt:v1.4.1.x
 ```
 
 ### Alias

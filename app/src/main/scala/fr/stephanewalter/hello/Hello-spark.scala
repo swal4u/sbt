@@ -6,7 +6,7 @@ import org.apache.spark.sql.types.{StringType, StructType}
 import java.io.File
 
 object ConnexionLocal extends App {
-  //Logger.getLogger("org").setLevel(Level.WARN)
+  Logger.getLogger("org").setLevel(Level.WARN)
 
   // Emplacement local (répertoire qui simule un emplacement Hive)
   val warehouseLocation = new File("spark-warehouse").getAbsolutePath
@@ -21,7 +21,7 @@ object ConnexionLocal extends App {
 }
 
 object Connexion extends App {
-  //Logger.getLogger("org").setLevel(Level.WARN)
+  Logger.getLogger("org").setLevel(Level.WARN)
 
   //val warehouseLocation = "/user/hive/warehouse"
   // Emplacement local (répertoire qui simule un emplacement Hive)

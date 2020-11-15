@@ -16,5 +16,5 @@ Don't forget to create alias on your machine to simplify the usage of this conta
 
 ### Publish (tip for me)
 
-git tag -a -m "message" vX.Y.Z.T
+git tag -am "message" vX.Y.Z.T
 git push --tags

@@ -8,4 +8,4 @@ RUN /bin/sh -c "curl -sL https://github.com/sbt/sbt/releases/download/v${SBT_VER
 RUN /bin/sh -c "sbt -Dsbt.rootdir=true sbtVersion"
 
 VOLUME [ "/root/.cache"]
-ENTRYPOINT ["sbt -Dsbt.rootdir=true"]
+ENTRYPOINT ["sbt","-Dsbt.rootdir=true"]

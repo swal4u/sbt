@@ -1,6 +1,7 @@
 # How to work with the container SBT
 
 When you start your container, it automatically starts the sbt package command.
+
 *Note that I encountered problem with sbt 1.4.1 with rights on folder to work with gitlab CI/CD.*
 
 ## Get started

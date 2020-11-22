@@ -8,7 +8,7 @@ Note that I encountered problem with sbt 1.4.1 with rights on folder to work wit
 You have just to launch this command.
 
 ```bash
-docker run -it --rm -v $PWD:/app -w /app -v ivy2:/home/sbt/.cache --name sbt -e TZ=Europe/Paris swal4u/sbt:v1.3.7.x
+docker run -it --rm -v $PWD:/app -w /app -v cache:/root/.cache --name sbt -e TZ=Europe/Paris swal4u/sbt:v1.3.7.x
 ```
 
 ### Alias

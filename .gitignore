@@ -10,6 +10,7 @@ spark-warehouse
 .scala_history
 metastore_db
 .metals
+.bsp
 
 # sbt specific
 dist/*

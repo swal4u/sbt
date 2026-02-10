@@ -19,4 +19,5 @@ COPY --from=builder /root/.cache /root/.cache
 COPY --from=builder /root/.sbt /root/.sbt
 COPY --from=builder /app/target /app/target
 WORKDIR /app
-CMD ["/root/.sdkman/candidates/sbt/current/bin/sbt", "compile"]
+ENTRYPOINT ["/root/.sdkman/candidates/sbt/current/bin/sbt"]
+CMD ["compile"]

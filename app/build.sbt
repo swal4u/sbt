@@ -1,57 +1,23 @@
-// give the user a nice default project!
+lazy val root = (project in file(".")).settings(
+  inThisBuild(List(scalaVersion := "2.13.18", version := "0.1.0")),
+  name := "kiss",
+  //javaOptions ++= Seq("-Xms512M", "-Xmx2048M", "-XX:+CMSClassUnloadingEnabled"),
+  javaOptions ++= Seq("-Xms512M", "-Xmx2048M", "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED"),
+  scalacOptions ++= Seq("-deprecation", "-unchecked"),
+  Test / parallelExecution := false,
+  Test / fork := true
+)
 
-lazy val root = (project in file(".")).
-
-  settings(
-    inThisBuild(List(
-      organization := "fr.stephanewalter",
-      scalaVersion := "2.12.10"
-    )),
-    name := "hello-spark",
-    version := "0.0.1",
-
-    javacOptions ++= Seq("-source", "1.8", "-target", "1.8"),
-    javaOptions ++= Seq("-Xms512M", "-Xmx2048M", "-XX:+CMSClassUnloadingEnabled"),
-    scalacOptions ++= Seq("-deprecation", "-unchecked"),
-    parallelExecution in Test := false,
-    fork := true,
-
-    //coverageHighlighting := true,
-
-    libraryDependencies ++= Seq(
-      //"org.apache.spark" %% "spark-streaming" % "2.3.0" % "provided",
-      "org.apache.spark" %% "spark-core" % "2.4.2",
-      "org.apache.spark" %% "spark-sql" % "2.4.2" % "provided",
-      "org.apache.spark" %% "spark-hive" % "2.4.2" % "provided",
-      "org.scalatest" %% "scalatest" % "3.0.1" % "test",
-      "org.scalacheck" %% "scalacheck" % "1.13.4" % "test",
-      "org.scalastyle" %% "scalastyle" % "1.0.0",
-      "org.scoverage" %% "scalac-scoverage-plugin" % "1.4.1" % "provided",
-      "com.holdenkarau" %% "spark-testing-base" % "2.4.2_0.12.0" % "test"
-    ),
-
-    // uses compile classpath for the run task, including "provided" jar (cf http://stackoverflow.com/a/21803413/3827)
-    run in Compile := Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run)).evaluated,
-
-    scalacOptions ++= Seq("-deprecation", "-unchecked"),
-    pomIncludeRepository := { x => false },
-
-   resolvers ++= Seq(
-      "sonatype-releases" at "https://oss.sonatype.org/content/repositories/releases/",
-      "Typesafe repository" at "https://repo.typesafe.com/typesafe/releases/",
-      "Second Typesafe repo" at "https://repo.typesafe.com/typesafe/maven-releases/",
-      Resolver.sonatypeRepo("public")
-    ),
-
-    pomIncludeRepository := { x => false },
-
-    // publish settings
-    publishTo := {
-      val nexus = "https://oss.sonatype.org/"
-      if (isSnapshot.value)
-        Some("snapshots" at nexus + "content/repositories/snapshots")
-      else
-        Some("releases"  at nexus + "service/local/staging/deploy/maven2")
-    }
-  )
-
+libraryDependencies ++= Seq(
+  "org.apache.spark"         %% "spark-sql"            % "4.1.1"    % "provided",
+  "org.scalameta"            %% "munit"                % "1.0.0-M7" % Test,
+  "com.github.mrpowers"      %% "spark-fast-tests"     % "1.3.0"    % Test,
+  "com.typesafe"              % "config"               % "1.4.1",
+  "org.postgresql"            % "postgresql"           % "42.6.0",
+  "org.apache.kafka"          % "kafka-clients"        % "3.4.0",
+  "org.apache.spark"         %% "spark-sql-kafka-0-10" % "4.1.1",
+  "com.lihaoyi"              %% "os-lib"               % "0.9.1",
+  "org.apache.logging.log4j"  % "log4j-core"           % "2.20.0",
+  "org.apache.logging.log4j"  % "log4j-api"            % "2.20.0",
+  "org.apache.logging.log4j" %% "log4j-api-scala"      % "12.0"
+)

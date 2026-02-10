@@ -5,7 +5,8 @@ lazy val root = (project in file(".")).settings(
   javaOptions ++= Seq("-Xms512M", "-Xmx2048M", "--add-opens=java.base/sun.nio.ch=ALL-UNNAMED"),
   scalacOptions ++= Seq("-deprecation", "-unchecked"),
   Test / parallelExecution := false,
-  Test / fork := true
+  Test / fork := true,
+  Compile / mainClass := None
 )
 
 libraryDependencies ++= Seq(

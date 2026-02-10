@@ -14,8 +14,9 @@ RUN /root/.sdkman/candidates/sbt/current/bin/sbt update && \
     /root/.sdkman/candidates/sbt/current/bin/sbt compile
 
 FROM base
+ENV PATH="$PATH:/root/.sdkman/candidates/scala/current/bin:/root/.sdkman/candidates/sbt/current/bin"
 COPY --from=builder /root/.cache /root/.cache
 COPY --from=builder /root/.sbt /root/.sbt
 COPY --from=builder /app/target /app/target
 WORKDIR /app
-CMD ["sbt", "run"]
+CMD ["/root/.sdkman/candidates/sbt/current/bin/sbt", "compile"]

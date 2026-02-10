@@ -1,5 +1,3 @@
 .git
 app/metastore_db
 app/spark-warehouse
-app
-project

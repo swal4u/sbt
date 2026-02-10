@@ -9,9 +9,9 @@ RUN apt-get update && apt-get install pass git gnupg2 zip unzip curl -y && \
 
 FROM base AS builder
 WORKDIR /app 
-ADD ./app .
-RUN /root/.sdkman/candidates/sbt/current/bin/sbt update
-RUN /root/.sdkman/candidates/sbt/current/bin/sbt compile
+COPY ./app .
+RUN /root/.sdkman/candidates/sbt/current/bin/sbt update && \
+    /root/.sdkman/candidates/sbt/current/bin/sbt compile
 
 FROM base
 COPY --from=builder /root/.cache /root/.cache

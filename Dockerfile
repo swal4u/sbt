@@ -18,6 +18,7 @@ ENV PATH="$PATH:/root/.sdkman/candidates/scala/current/bin:/root/.sdkman/candida
 COPY --from=builder /root/.cache /root/.cache
 COPY --from=builder /root/.sbt /root/.sbt
 COPY --from=builder /app/target /app/target
+RUN ldconfig
 WORKDIR /app
 ENTRYPOINT ["/root/.sdkman/candidates/sbt/current/bin/sbt"]
-CMD ["compile"]
+#CMD ["compile"]

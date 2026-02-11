@@ -24,7 +24,7 @@ docker build -t sbt .
 - Launch the container to compile your Scala project
 
 ```bash
-docker run -it --rm -v $PWD:/app sbt [compile]
+docker run -it --rm -v $PWD:/app sbt compile
 ```
 
 - Launch the container to test your Scala project

@@ -36,6 +36,7 @@ docker run -it --rm -v $PWD:/app sbt test
 
 - This image is based on hardened docker image Eclipse Temurin JDK 21.
 - This image includes Scala 2.13.18 and SBT.
+- This image contains components to support scala native.
 - I use sdkman to install sbt and scala.
 - I use multi-stage Docker builds to optimize the image size.
 - I have a default scala project to put in cache the dependencies and compiled artifacts like spark, kafka. If you want to update the dependencies, you need to modify the build.sbt file and rebuild the image.
